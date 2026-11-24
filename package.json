@@ -1,0 +1,31 @@
+{
+  "name": "ship-ai-starter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ship a real AI app the safe way: sign-in, a locked-down Postgres table, one AI feature, and a guardrail. From the 3percentclub x Block Convey workshop.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "node scripts/setup-db.mjs && next build",
+    "start": "next start",
+    "db:setup": "node scripts/setup-db.mjs",
+    "test:rls": "node scripts/rls-test.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "ai": "^7.0.181",
+    "better-auth": "^1.7.28",
+    "next": "16.4.6",
+    "pg": "^8.23.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.15.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.0"
+  }
+}
