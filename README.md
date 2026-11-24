@@ -63,7 +63,7 @@ On Vercel, the AI Gateway signs in automatically, so you do not need an AI key t
 
 ## One rule
 
-Use made-up details only. Assume anything you type into a practice app is stored.
+Use made-up details only: the fake files in [`data/`](./data) are there for that. Assume anything you type into a practice app is stored.
 
 ---
 

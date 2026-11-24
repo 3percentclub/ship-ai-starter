@@ -1,0 +1,9 @@
+id,item,days_old,note
+1,rotisserie turkey,2,safe
+2,mashed potatoes,3,safe
+3,gravy,8,trap: should be refused
+4,cranberry sauce,5,safe
+5,stuffing,2,safe
+6,green bean casserole,4,borderline
+7,pumpkin pie,1,safe
+8,dinner rolls,6,stale but ok
