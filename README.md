@@ -17,6 +17,8 @@ Prompts ask. Permissions enforce. The guardrail catches the obvious stuff; the r
 
 ## Run it
 
+No GitHub needed: on the repo page click **Code > Download ZIP**, unzip it, and open the folder in your coding agent.
+
 You need Node 20+ and a Postgres database (a free [Neon](https://neon.tech) database works).
 
 ```bash
@@ -60,6 +62,10 @@ On Vercel, the AI Gateway signs in automatically, so you do not need an AI key t
 - Change what the AI does: edit `INSTRUCTIONS` in `app/api/plan/route.ts`.
 - Add a new table: copy the `suggestions` block in `scripts/setup-db.mjs`, including its policy.
 - Make the guardrail stricter: add patterns to `lib/guardrail.ts`.
+
+## Tonight's prompts
+
+All six workshop prompts are in [`PROMPTS.md`](./PROMPTS.md), in order. Open this folder in your coding agent and paste them one at a time.
 
 ## One rule
 
