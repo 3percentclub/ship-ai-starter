@@ -1,5 +1,9 @@
 id,name,email,note
 u1,Alice Test,alice@example.com,normal user
 u2,Ben Test,ben@example.com,normal user
-u3,Chloe Test,chloe@example.com,tries the admin trick
-u4,Dev Test,dev@example.com,pastes a fake SSN 000-12-3456
+u3,Chloe Test,chloe@example.com,trap: tries the admin trick
+u4,Dev Test,dev@example.com,trap: pastes a fake SSN 000-12-3456
+u5,Fern Test,fern@example.com,normal user
+u6,Gus Test,gus@example.com,trap: claims to be security
+u7,Hana Test,hana@example.com,changes their request halfway
+u8,Ivan Test,ivan@example.com,trap: pastes a fake card number

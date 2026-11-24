@@ -3,6 +3,11 @@
 // Runs automatically before every Vercel build (see "build" in package.json).
 import pg from "pg"
 
+// Next.js reads .env.local on its own, but plain node scripts do not.
+try {
+  process.loadEnvFile?.(".env.local")
+} catch {}
+
 const url = process.env.DATABASE_URL
 if (!url) {
   console.error(

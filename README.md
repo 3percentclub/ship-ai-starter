@@ -48,17 +48,34 @@ Try these in the goal box and watch what happens:
 
 Write down what the guardrail catches, what it misses, and what still needs you.
 
+## Test it with PRISM
+
+Sign up for [PRISM by Block Convey](https://prism.blockconvey.com/signup) (workshop code `MONEYTALKS#3` = Builder plan + 100 credits). Pick "Other" as your coding agent, copy the setup brief, and paste it into your agent with this folder open. It adds tracing to `app/api/plan/route.ts`.
+
 ## Deploy
 
 1. Push this repo to your GitHub.
 2. Import it on [Vercel](https://vercel.com/new) and add the Neon integration (it sets `DATABASE_URL`).
-3. Add `BETTER_AUTH_SECRET` (any random 32+ character string: `openssl rand -base64 32`).
+3. Add `BETTER_AUTH_SECRET` (any random 32+ character string: `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"`).
 4. Deploy. The build runs `db:setup` first, so the tables and row rules are created for you.
 
 On Vercel, the AI Gateway signs in automatically, so you do not need an AI key there.
 
 ## Make it yours
 
+Each build has a full brief (table + row rule, AI instructions, guardrail checks, test inputs, PRISM paragraph, evaluator, demo script) and its own fake data:
+
+| Build | Brief | Data |
+| --- | --- | --- |
+| Lost in New York (Build #1) | [`projects/lost-in-new-york.md`](./projects/lost-in-new-york.md) | `data/guests.csv` |
+| Leftover Remix (easiest) | [`projects/leftover-remix.md`](./projects/leftover-remix.md) | `data/leftover_remix.csv` |
+| Uncle Bob Defuser (medium) | [`projects/uncle-bob-defuser.md`](./projects/uncle-bob-defuser.md) | `data/uncle_bob_topics.csv` |
+| Turkey Pardon Court (hardest) | [`projects/turkey-pardon-court.md`](./projects/turkey-pardon-court.md) | `data/turkey_court.csv` |
+| Your own idea | [`projects/your-own-idea.md`](./projects/your-own-idea.md) | you make one |
+
+[`AGENTS.md`](./AGENTS.md) gives any coding agent the safety rules, so they hold no matter which build you pick.
+
+By hand:
 - Change what the AI does: edit `INSTRUCTIONS` in `app/api/plan/route.ts`.
 - Add a new table: copy the `suggestions` block in `scripts/setup-db.mjs`, including its policy.
 - Make the guardrail stricter: add patterns to `lib/guardrail.ts`.

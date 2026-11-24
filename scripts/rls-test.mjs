@@ -2,6 +2,11 @@
 // Run with: npm run test:rls   (needs DATABASE_URL, and npm run db:setup first)
 import pg from "pg"
 
+// Next.js reads .env.local on its own, but plain node scripts do not.
+try {
+  process.loadEnvFile?.(".env.local")
+} catch {}
+
 const url = process.env.DATABASE_URL
 if (!url) {
   console.error("DATABASE_URL is not set. See .env.example.")
